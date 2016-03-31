@@ -53,21 +53,8 @@
 				//$salt = '$2a$07$R.gJb2U2N.FmZ4hPp1y2CN$';
 				//$password = crypt($_POST['password'], $salt);
 				$password = $_POST['password'];
-				$return = array();
-				$query = $this->ksdb->db->prepare("SELECT * FROM users WHERE username = '".$_POST['username']."' AND password = '".$password."'");
-				try {
-					$query->execute();
-					for($i=0; $row = $query->fetch(); $i++){
-						$return[$i] = array();
-						foreach($row as $key => $rowitem){
-							$return[$i][$key] = $rowitem;
-						}
-					}
-				}catch (PDOException $e) {
-					echo $e->getMessage();
-				}
-				$login = $return;
-				//$login = $this->ksdb->dbselect('users', array('*'),array('username' => $_POST['username'], 'password' => $password));
+
+				$login = $this->ksdb->dbselect('users', array('*'),' where username="' .$_POST['username']. '" and password='. $password);
 				if(!empty($login) && is_array($login) && !empty($login[0])){
 					$this->loginSuccess();
 				}else{
