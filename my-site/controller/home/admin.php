@@ -108,20 +108,8 @@
 				}
 				$i++;
 			}
-			try {
-				if(!empty($id)){
-					$query = $this->ksdb->db->prepare("UPDATE posts(".$cols.") VALUES (".$values.")");
-				}else{
-					$query = $this->ksdb->db->prepare("INSERT INTO posts(".$cols.") VALUES (".$values.")");
-				}
-	
-				$result = $query->execute();
-				$add = $query->rowCount();
-			}catch (PDOException $e) {
-				echo $e->getMessage();
-			}
-			$query->closeCursor();
-			$this->ksdb->db = null;
+
+			$add = $this->ksdb->dbadd('posts', $cols, $values);
 			if(!empty($add) && $add > 0){
 				$status = array('success' => 'Your post has been saved successfully.');
 				$key = 'success';
@@ -160,20 +148,9 @@
 		}
 
 		public function listComments(){
-			$comments = $return = array();
-			$query = $this->ksdb->db->prepare("SELECT * FROM comments");
-			try {
-				$query->execute();
-				for($i=0; $row = $query->fetch(); $i++){
-					$return[$i] = array();
-					foreach($row as $key => $rowitem){
-						$return[$i][$key] = $rowitem;
-					}
-				}
-			}catch (PDOException $e) {
-				echo $e->getMessage();
-			}
-			$comments = $return;
+			$comments = array();
+
+			$comments = $this->ksdb->dbselect('comments', array('*'));
 			require_once('../../view/admin/managecomments.php');
 		}
 

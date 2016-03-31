@@ -29,20 +29,8 @@ class Posts extends Blog{
 		$id = 0;
 		$posts = $return = array();
 		$template = '';
-		//$posts = $this->ksdb->dbselect('posts', array('*'));
-		$query = $this->ksdb->db->prepare("SELECT * FROM posts");
-		try {
-			$query->execute();
-			for($i=0; $row = $query->fetch(); $i++){
-				$return[$i] = array();
-				foreach($row as $key => $rowitem){
-					$return[$i][$key] = $rowitem;
-				}
-			}
-		}catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-		$posts = $return;
+		$posts = $this->ksdb->dbselect('posts', array('*'));
+		
 		foreach($posts as $key => $post){
 			$posts[$key]['comments'] = $this->comments->commentNumber($post['id']);
 		}
@@ -54,21 +42,8 @@ class Posts extends Blog{
 		$id = $postId;
 		$posts = $return = array();
 		$template = '';
-		//$posts = $this->ksdb->dbselect('posts', array('*'));
-		$query = $this->ksdb->db->prepare("SELECT * FROM posts WHERE id = ".$id);
-		try {
-			$query->execute();
-			for($i=0; $row = $query->fetch(); $i++){
-				$return[$i] = array();
-				foreach($row as $key => $rowitem){
-					$return[$i][$key] = $rowitem;
-				}
-			}
-		}catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-		$posts = $return;
-		//$posts = $this->ksdb->dbselect('posts', array('*'),array('id' => $id));
+		$posts = $this->ksdb->dbselect('posts', array('*'),'WHERE id = '.$id);
+
 		$markdown = new Michelf\Markdown();
 		$posts[0]['content'] = $markdown->defaultTransform($posts[0]['content']);
 		$postComments = $this->comments->getComments($posts[0]['id']);
@@ -92,21 +67,8 @@ class Comments extends Blog{
 
 
 	public function commentNumber($postId){
-		$return = array();
-		$query = $this->ksdb->db->prepare("SELECT * FROM comments WHERE postid = ".$postId);
-		try {
-			$query->execute();
-			for($i=0; $row = $query->fetch(); $i++){
-				$return[$i] = array();
-				foreach($row as $key => $rowitem){
-					$return[$i][$key] = $rowitem;
-				}
-			}
-		}catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-		$query = $return;
-		//$query = $this->ksdb->dbselect('comments', array('*'),array('postid' => $postId));
+
+		$query = $this->ksdb->dbselect('comments', array('*'),' where postid='. $postId);
 		$commentnum = count($query);
 		if($commentnum <= 0){
 			$commentnum = 0;
@@ -115,21 +77,8 @@ class Comments extends Blog{
 	}
 
 	public function getComments($postId){
-		$return = array();
-		$query = $this->ksdb->db->prepare("SELECT * FROM comments WHERE postid = ".$postId);
-		try {
-			$query->execute();
-			for($i=0; $row = $query->fetch(); $i++){
-				$return[$i] = array();
-				foreach($row as $key => $rowitem){
-					$return[$i][$key] = $rowitem;
-				}
-			}
-		}catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-		return $query = $return;
-		//return $query = $this->ksdb->dbselect('comments', array('*'),array('postid' => $postId));
+
+		return $query = $this->ksdb->dbselect('comments', array('*'),'WHERE postid = '.$postId);
 	}
 
 	public function addComment(){
@@ -167,17 +116,8 @@ class Comments extends Blog{
 			}
 			$i++;
 		}
-		try {
-				$query = $this->ksdb->db->prepare("INSERT INTO comments(".$cols.") VALUES (".$values.")");
-				
-				$result = $query->execute();
-				$add = $query->rowCount();
-		}catch (PDOException $e) {
-				echo $e->getMessage();
-		}
-		$query->closeCursor();
-		$this->db = null;
-		//$add = $this->ksdb->dbadd('comments', $array, $format);
+
+		$add = $this->ksdb->dbadd('comments', $cols, $values);
 		if(!empty($add) && $add > 0){
 			$status = array('success' => 'Your comment has been submitted');
 			$key = 'success';
