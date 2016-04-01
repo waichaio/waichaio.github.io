@@ -1,6 +1,6 @@
 <?php require_once('shared/header.php'); ?>
 <hr style="clear:both;"/>
-<a href="<?php echo $this->base->url.'/my-site'; ?>" class="btn btn-primary">Return to Post List</a>
+<a href="<?php echo $this->base->url.'/my-site'; ?>" class="ui olive basic button">Return to Post List</a>
 <div class="container">
 <?php foreach($posts as $post): ?>
 	<h3><?php echo (!empty($post['title'])? htmlspecialchars($post['title']): 'Post #'.htmlspecialchars($post['id'])); ?></h3>
@@ -12,17 +12,45 @@
 <h3>Comments</h3>
 
     <?php foreach($postComments as $comment): ?>
-        <div class="card card-container">
-        	<section class="span3">
-        		<h4><?php echo htmlspecialchars($comment['name']); ?></h4>
-        		<p><small><?php echo htmlspecialchars($comment['email']); ?></small></p>
-        	</section>
-        	<section class="span8">
-        		<p><?php echo htmlspecialchars($comment['comment']); ?></p>
-        	</section>
-    	</div>
+        <div class="ui feed">
+            <div class="event">
+                <div class="">
+                  <!-- <img src="/images/avatar/small/elliot.jpg"> -->
+                  <i class="bordered user icon"></i>
+                </div>
+                <div class="content">
+                    <div class="summary">
+                        <a class="user"> <?php echo htmlspecialchars($comment['name']); ?> </a> <?php echo htmlspecialchars($comment['email']); ?>
+                        <div class="date">
+                          1 Hour Ago
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <a class="like">
+                            <i class="like icon"></i> 4 Likes
+                        </a>
+                  </div>
+                  <div class="description">
+                        <?php echo htmlspecialchars($comment['comment']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="ui cards">
+          <div class="card">
+            <div class="content">
+              <div class="header"><?php echo htmlspecialchars($comment['name']); ?></div>
+              <div class="meta"><?php echo htmlspecialchars($comment['email']); ?></div>
+              <div class="description">
+                <?php echo htmlspecialchars($comment['comment']); ?>
+              </div>
+            </div>
+          </div>
+        </div> -->
     <?php endforeach; ?>
 </div>
+
+
 
 <h3>Leave Comment</h3>
 <form action="<?php echo $this->base->url.'/my-site/index.php?action=save'; ?>" method="post" class="form-horizontal">
