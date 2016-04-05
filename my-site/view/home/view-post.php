@@ -1,6 +1,6 @@
 <?php require_once('shared/header.php'); ?>
 <hr style="clear:both;"/>
-<a href="<?php echo $this->base->url.'/my-site'; ?>" class="ui olive basic button">Return to Post List</a>
+<a href="<?php echo $this->base->url.'/my-site'; ?>" class="ui olive basic button"><?php echo $lang["RETURN_POST_LIST"] ?></a>
 <div class="container">
 <?php foreach($posts as $post): ?>
 	<h3><?php echo (!empty($post['title'])? htmlspecialchars($post['title']): 'Post #'.htmlspecialchars($post['id'])); ?></h3>
@@ -9,8 +9,8 @@
 <?php endforeach; ?>
 <div class="container">
 <div class="container">
-<h3>Comments</h3>
-
+<h3><?php echo $lang["COMMENTS"] ?></h3>
+<?php if (count($postComments)>0): ?>
     <?php foreach($postComments as $comment): ?>
         <div class="ui feed">
             <div class="event">
@@ -36,46 +36,38 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="ui cards">
-          <div class="card">
-            <div class="content">
-              <div class="header"><?php echo htmlspecialchars($comment['name']); ?></div>
-              <div class="meta"><?php echo htmlspecialchars($comment['email']); ?></div>
-              <div class="description">
-                <?php echo htmlspecialchars($comment['comment']); ?>
-              </div>
-            </div>
-          </div>
-        </div> -->
     <?php endforeach; ?>
+<?php else: ?>
+    <div><?php echo $lang["NO_COMMENT"] ?></div>
+<?php endif; ?>
 </div>
 
 
 
-<h3>Leave Comment</h3>
+<h3><?php echo $lang["COMMENT"] ?></h3>
 <form action="<?php echo $this->base->url.'/my-site/index.php?action=save'; ?>" method="post" class="form-horizontal">
 	<input type="hidden" value="<?php echo $_GET['id']; ?>" name="comment[postid]" />
     <div class="control-group <?php echo (!empty($error)? 'error': ''); ?>">
-    	<label class="control-label" for="email">Email</label>
+    	<label class="control-label" for="email"><?php echo $lang['EMAIL']; ?></label>
     	<div class="controls">
-    		<input type="email" name="comment[email]" id="email" placeholder="Your Email Address"/>
+    		<input type="email" name="comment[email]" id="email" placeholder=<?php echo $lang['EMAIL']; ?> />
     	</div>
     </div>
     <div class="control-group <?php echo (!empty($error)? 'error': ''); ?>">
-    	<label class="control-label" for="name">Full Name</label>
+    	<label class="control-label" for="name"><?php echo $lang['FULL_NAME']; ?></label>
     	<div class="controls">
-    		<input type="text" name="comment[fullname]" id="name" placeholder="Your Full Name"/>
+    		<input type="text" name="comment[fullname]" id="name" placeholder=<?php echo $lang['FULL_NAME']; ?> />
     	</div>
     </div>
     <div class="control-group <?php echo (!empty($error)? 'error': ''); ?>">
-    	<label class="control-label" for="comment">Comment</label>
+    	<label class="control-label" for="comment"><?php echo $lang['COMMENT']; ?></label>
     	<div class="controls">
     		<textarea id="comment" name="comment[context]"></textarea>
     	</div>
     </div>
     <div class="control-group">
     	<div class="controls">
-    		<button type="submit" class="btn">Submit Comment</button>
+    		<button type="submit" class="btn"><?php echo $lang['SUBMIT_COMMENT']; ?></button>
     	</div>
     </div>
 </form>

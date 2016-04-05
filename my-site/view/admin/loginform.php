@@ -1,3 +1,4 @@
+
 <?php require_once('view/home/shared/header.php'); ?>
 <br/>
 <?php if(!empty($error)): ?>
@@ -7,13 +8,13 @@
 <div class = "container">
     <div class="wrapper">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" method="post" name="Login_Form" class="form-signin">       
-            <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+            <h3 class="form-signin-heading"><?php echo $lang['WELCOME_BACK_MSG']; ?></h3>
               <hr class="colorgraph"><br>
               
-              <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
-              <input type="password" class="form-control" name="password" placeholder="Password" required=""/>            
+              <input type="text" class="form-control" name="username" placeholder=<?php echo $lang['TXT_BOX_USERNAME']; ?> required="" autofocus="" />
+              <input type="password" class="form-control" name="password" placeholder=<?php echo $lang['TXT_BOX_PASSWORD']; ?> required=""/>            
              
-              <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>            
+              <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit"><?php echo $lang['BTN_LOGIN']; ?></button>            
         </form>         
     </div>
 </div>

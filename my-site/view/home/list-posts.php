@@ -4,7 +4,7 @@
 	<div class="card card-container">
 		<h3><?php echo (!empty($post['title'])? htmlspecialchars($post['title']): 'Post #'.htmlspecialchars($post['id'])); ?></h3>
 		<p><?php echo implode(' ', array_slice(explode(' ', strip_tags($post['content'])), 0, 10)); ?> [...]</p>
-		<a href="<?php echo $this->base->url."/my-site/?id=".$post['id']; ?>" class="btn btn-primary">Read More</a><p>comments: <?php echo $post['comments']; ?></p>
+		<a href="<?php echo $this->base->url."/my-site/?id=".$post['id']; ?>" class="btn btn-primary"><?php echo $lang['READ_MORE']; ?></a><p><?php echo $lang['COMMENTS']; ?>: <?php echo $post['comments']; ?></p>
 	</div>
 <?php endforeach; ?>
 </div>
