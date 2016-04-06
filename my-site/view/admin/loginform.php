@@ -2,7 +2,7 @@
 <?php require_once('view/home/shared/header.php'); ?>
 <br/>
 <?php if(!empty($error)): ?>
-    <div class="alert alert-error">~<?php echo $error; ?></div>
+    <div class="alert alert-error">~<?php echo  $lang['MSG_LOGGEDOUT_PLEASE_LOGIN']; ?></div>
 <?php endif; ?>
 <br/>
 <div class = "container">

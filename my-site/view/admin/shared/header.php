@@ -12,4 +12,8 @@ include_once '../../common.php';
 <body>
 	<section class="container">
 		<br/>
-		<a href="<?php echo 'http://'.$_SERVER["SERVER_NAME"].'/my-site/login.php?status=logout'; ?>" class="btn btn-info">Logout</a>
+		<a href="<?php echo 'http://'.$_SERVER["SERVER_NAME"].'/my-site/login.php?status=logout'; ?>" class="btn btn-info"><?php echo $lang['BTN_LOGOUT'] ?></a>
+		<div id="languages">
+			<a href=<?php echo $_SERVER["PHP_SELF"]."?lang=en" ?>><img src="../../images/en.png" /></a>
+			<a href=<?php echo $_SERVER["PHP_SELF"]."?lang=ch" ?>><img src="../../images/cn.png" /></a>
+		</div>

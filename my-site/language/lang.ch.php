@@ -26,4 +26,10 @@ $lang['COMMENT'] = '留言';
 $lang['NO_COMMENT'] = '没留言';
 $lang['SUBMIT_COMMENT'] = '提交';
 $lang['RETURN_POST_LIST'] = '回去';
+$lang['BTN_EDIT'] = '更改';
+$lang['BTN_DELETE'] = '删除';
+$lang['BTN_CREATE'] = '新建';
+$lang['BTN_LOGOUT'] = '退出';
+$lang['BTN_BACK'] = '回去';
+$lang['MSG_LOGGEDOUT_PLEASE_LOGIN'] = '已退出。请登录';
 ?>

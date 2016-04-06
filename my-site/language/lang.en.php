@@ -26,5 +26,10 @@ $lang['COMMENT'] = 'Comment';
 $lang['NO_COMMENT'] = 'There is no comment';
 $lang['SUBMIT_COMMENT'] = 'Submit Comment';
 $lang['RETURN_POST_LIST'] = 'Return To Post List';
-
+$lang['BTN_EDIT'] = 'Edit';
+$lang['BTN_DELETE'] = 'Delete';
+$lang['BTN_CREATE'] = 'Create';
+$lang['BTN_LOGOUT'] = 'Logout';
+$lang['BTN_BACK'] = 'Back to Posts';
+$lang['MSG_LOGGEDOUT_PLEASE_LOGIN'] = 'You have been logged out due to inactivity. Please login again.';
 ?>
