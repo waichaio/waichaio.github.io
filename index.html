@@ -1,21 +1,22 @@
 
 <!DOCTYPE html>
 <html>
-  <title>My Digital CV</title>
+<title>My Digital CV</title>
 <header>
   <div class="name">Anthony O</div>
 </header>
+
 <div class="content">
   <div data-0="opacity:1" data-200="opacity:0" class="cv">Curriculum Vitae</div>
   <div data-0="opacity:1" data-200="opacity:0" class="info"><i class="fa fa-home fa-fw"></i>
     <div class="address">79 Owens Rd, Epsom, Auckland, 1023</div>
   </div>
-  <div data-0="opacity:1" data-200="opacity:0" class="info"><a href="mailto:name@domain.com"><i class="fa fa-envelope fa-fw"></i>
-      <div class="email">waichaio973@gmail.com</div></a></div>
+  <div data-0="opacity:1" data-200="opacity:0" class="info"><i class="fa fa-envelope fa-fw"></i>
+      <div class="email">waichaio973@gmail.com</div></div>
   <div data-0="opacity:1" data-200="opacity:0" class="info"><i class="fa fa-phone fa-fw"></i>
     <div class="telephone">021-211 6669</div>
   </div>
-  <div data-0="opacity:1" data-200="opacity:0" class="info"><a href="//www.domain.com"><i class="fa fa-link fa-fw"></i>
+  <div data-0="opacity:1" data-200="opacity:0" class="info"><a href="https://waichaio.github.io"><i class="fa fa-link fa-fw"></i>
       <div class="website">https://waichaio.github.io/</div></a></div>
   <!-- <div data-0="opacity:1" data-200="opacity:0" class="info"><a href="//www.domain.com"><i class="fa fa-file-text fa-fw"></i>
       <div class="pdf">Print/PDF version</div></a></div> -->
@@ -37,11 +38,14 @@
       <div data-450="width: 0%" data-750="width: 82.5%" class="skill">
         <div class="skillname">Knockout</div>
       </div>
-      <div data-500="width: 0%" data-800="width: 75%" class="skill">
+      <div data-500="width: 0%" data-800="width: 60%" class="skill">
         <div class="skillname">HTML/CSS</div>
       </div>
-      <div data-550="width: 0%" data-850="width: 70%" class="skill">
+      <div data-550="width: 0%" data-850="width: 85%" class="skill">
         <div class="skillname">SQL Server</div>
+      </div>
+      <div data-600="width: 0%" data-900="width: 80%" class="skill">
+        <div class="skillname">Reporting</div>
       </div>
     </div>
   </section>
@@ -58,6 +62,16 @@
       <div class="jobt">Software Developer</div>
       <div class="company">Lintramax</div>
       <div class="dates">From Jan 12 - To May 12</div>
+    </div>
+    <div data-2000="opacity:0" data-2200="opacity:1" class="job">
+      <div class="jobt">Java Developer</div>
+      <div class="company">Dalas Technologies</div>
+      <div class="dates">From Aug 08 - To Dec 11</div>
+    </div>
+    <div data-2100="opacity:0" data-2300="opacity:1" class="job">
+      <div class="jobt">Software Developer</div>
+      <div class="company">Haisan Group</div>
+      <div class="dates">From 2007 - To 2008</div>
     </div>
   </section>
   <section id="education" data-2500="top:100%" data-2700="top:0%">
@@ -106,268 +120,217 @@
 
 <style type="text/css">
   @import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-body {
-  line-height: 1;
-  color: #000;
-  background: #fff;
-}
-ol,
-ul {
-  list-style: none;
-}
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
-caption,
-th,
-td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-a img {
-  border: none;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-html {
-  font-family: 'Roboto', sans-serif;
-}
-body {
-  background-color: #eee6ab;
-}
-a {
-  text-decoration: none;
-  color: #eee6ab;
-}
-header {
-  width: 100%;
-  height: 90px;
-  position: fixed;
-  top: 0;
-  background-color: #45484b;
-  color: #eee6ab;
-}
-.content {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 90px;
-  margin: 0;
-  padding: 0;
-  background-color: #45484b;
-  color: #eee6ab;
-}
-#skills,
-#education {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: #696758;
-  color: #696758;
-  top: 100%;
-}
-#skills h1,
-#education h1 {
-  color: #c5bc8e;
-  font-size: 2.5em;
-  margin: 20px;
-}
-#skills h1 p,
-#education h1 p {
-  padding: 0 10px;
-  display: inline-block;
-}
-#employment,
-#interests {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: #c5bc8e;
-  top: 100%;
-}
-#employment h1,
-#interests h1 {
-  color: #696758;
-  font-size: 2.5em;
-  margin: 20px;
-}
-#employment h1 p,
-#interests h1 p {
-  padding: 0 10px;
-  display: inline-block;
-}
-.name {
-  margin: 20px 0 0 20px;
-  padding: 0 10px;
-  font-size: 3em;
-}
-.cv {
-  margin: -22px 20px 0 20px;
-  padding: 0 10px 20px 10px;
-  font-size: 2em;
-}
-.info {
-  margin: 10px 20px;
-  color: #eee6ab;
-}
-.address,
-.email,
-.telephone,
-.website,
-.pdf {
-  display: inline-block;
-  margin: 5px;
-  text-align: left;
-  color: inherit;
-}
-.address a,
-.email a,
-.telephone a,
-.website a,
-.pdf a {
-  color: inherit;
-}
-.scroll {
-  font-size: 1.5em;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
-  position: fixed;
-  width: 200px;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -50px;
-}
-.skilllist {
-  width: 75%;
-  max-width: 500px;
-  margin: 20px 50px;
-}
-.skill {
-  width: 0;
-  margin: 5px;
-  background-color: #c5bc8e;
-}
-.skill .skillname {
-  padding: 5px;
-  text-align: right;
-}
-.job {
-  margin: 20px 50px;
-  color: #696758;
-}
-.job .jobt {
-  font-size: 1.5em;
-}
-.job .company,
-.job .dates {
-  margin-top: 10px;
-  font-size: 1em;
-}
-.qualification {
-  margin: 20px 50px;
-  color: #c5bc8e;
-}
-.qualification .qual {
-  font-size: 1.5em;
-}
-.qualification .institute,
-.qualification .dates {
-  margin-top: 10px;
-  font-size: 1em;
-}
-.interestlist {
-  max-width: 750px;
-}
-.interest {
-  width: 150px;
-  display: inline-block;
-  color: #696758;
-  text-align: center;
-  border: 2px solid;
-  padding: 10px;
-  margin: 0 0 40px 50px;
-}
-.interest i {
-  font-size: 3em;
-}
-.interest p {
-  font-size: 1.5em;
-}
+  @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+  html,
+  body,
+  div,
+  h1,
+  p
+   {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+  body {
+    line-height: 1;
+    color: #000;
+    background: #fff;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    vertical-align: middle;
+  }
+  caption,
+  th,
+  td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+  }
+  a img {
+    border: none;
+  }
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+  body {
+    background-color: #eee6ab;
+  }
+  a {
+    text-decoration: none;
+    color: #eee6ab;
+  }
+  header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    background-color: #45484b;
+    color: #eee6ab;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 90px;
+    margin: 0;
+    padding: 0;
+    background-color: #45484b;
+    color: #eee6ab;
+  }
+  #skills,
+  #education {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #696758;
+    color: #696758;
+    top: 100%;
+  }
+  #skills h1,
+  #education h1 {
+    color: #c5bc8e;
+    font-size: 2.5em;
+    margin: 20px;
+  }
+  #skills h1 p,
+  #education h1 p {
+    padding: 0 10px;
+    display: inline-block;
+  }
+  #employment,
+  #interests {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #c5bc8e;
+    top: 100%;
+  }
+  #employment h1,
+  #interests h1 {
+    color: #696758;
+    font-size: 2.5em;
+    margin: 20px;
+  }
+  #employment h1 p,
+  #interests h1 p {
+    padding: 0 10px;
+    display: inline-block;
+  }
+  .name {
+    margin: 20px 0 0 20px;
+    padding: 0 10px;
+    font-size: 3em;
+  }
+  .cv {
+    margin: -22px 20px 0 20px;
+    padding: 0 10px 20px 10px;
+    font-size: 2em;
+  }
+  .info {
+    margin: 10px 20px;
+    color: #eee6ab;
+  }
+  .address,
+  .email,
+  .telephone,
+  .website,
+  .pdf {
+    display: inline-block;
+    margin: 5px;
+    text-align: left;
+    color: inherit;
+  }
+  .address a,
+  .email a,
+  .telephone a,
+  .website a,
+  .pdf a {
+    color: inherit;
+  }
+  .scroll {
+    font-size: 1.5em;
+    opacity: 0.75;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    filter: alpha(opacity=75);
+    position: fixed;
+    width: 200px;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  .skilllist {
+    width: 75%;
+    max-width: 500px;
+    margin: 20px 50px;
+  }
+  .skill {
+    width: 0;
+    margin: 5px;
+    background-color: #c5bc8e;
+  }
+  .skill .skillname {
+    padding: 5px;
+    text-align: right;
+  }
+  .job {
+    margin: 20px 50px;
+    color: #696758;
+  }
+  .job .jobt {
+    font-size: 1.5em;
+  }
+  .job .company,
+  .job .dates {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+  .qualification {
+    margin: 20px 50px;
+    color: #c5bc8e;
+  }
+  .qualification .qual {
+    font-size: 1.5em;
+  }
+  .qualification .institute,
+  .qualification .dates {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+  .interestlist {
+    max-width: 750px;
+  }
+  .interest {
+    width: 150px;
+    display: inline-block;
+    color: #696758;
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    margin: 0 0 40px 50px;
+  }
+  .interest i {
+    font-size: 3em;
+  }
+  .interest p {
+    font-size: 1.5em;
+  }
 
 
 </style>
